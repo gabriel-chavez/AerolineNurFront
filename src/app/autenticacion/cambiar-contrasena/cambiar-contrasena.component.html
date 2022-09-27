@@ -1,0 +1,72 @@
+<nb-layout>
+    <nb-layout-column>
+        <div class="contenido-login mx-auto">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center label">
+                        <h2 style="color:#8f9bb3">Cambiar contraseña</h2>
+                    </div>
+
+                    <nb-card>
+                        <nb-card-header class="logo-login text-center">
+                            <img src="assets/images/logo.jpg" alt="logo" style="width:50%">
+                        </nb-card-header>
+                        <nb-card-body>
+
+                            <!-- <div *ngIf="datosUsuario.EmpleadoUsuarioAD=='1'; else usuarioBD" class="text-center container">
+                                <p class="mt-5 mb-5" style="color:#8f9bb3">Por favor realice el cambio de contraseña en su sistema operativo.</p>
+                                <div class="row">
+                                    <button type="button" nbButton shape="round" outline class="btn btn-default btn-block mt-3 mb-4" (click)="btnRetornar()">
+                                            Retornar
+                                        </button>
+                                </div>
+                            </div> -->
+                            <ng-template #usuarioBD>
+                                <form class="container" [formGroup]="cambioContrasenaForm" (ngSubmit)="cambiarContrasena()" novalidate autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="inputUsuario" class="label">Usuario</label>
+                                        <input type="text" nbInput fullWidth id="inputUsuario" [value]="cambioContrasenaForm.controls.usuario.value" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword1" class="label">Contraseña actual</label>
+                                        <input type="password" nbInput fullWidth id="inputPassword1" placeholder="Escriba su contraseña actual" formControlName="contrasenaActual">
+                                        <uv-frm-validacion mensaje="El campo contraseña actual es requerido" campo="contrasenaActual" [form]="cambioContrasenaForm"></uv-frm-validacion>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword2" class="label">Nueva Contraseña</label>
+                                        <input type="password" nbInput fullWidth id="inputPassword2" placeholder="Escriba su nueva contraseña" formControlName="contrasenaNueva">
+                                        <uv-frm-validacion mensaje="El campo nueva contraseña es requerido" campo="contrasenaNueva" [form]="cambioContrasenaForm"></uv-frm-validacion>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="label">Confirmar Contraseña</label>
+                                        <input type="password" nbInput fullWidth id="inputPassword3" placeholder="Confirme su nueva contraseña" formControlName="confirmarContrasena">
+                                        <uv-frm-validacion mensaje="El campo confirmar contraseña es requerido" campo="confirmarContrasena" [form]="cambioContrasenaForm"></uv-frm-validacion>
+
+                                        <div *ngIf="cambioContrasenaForm.errors?.confirmarContrasena  && cambioContrasenaForm.get('contrasenaNueva').touched">
+                                            <small class="text-danger">
+                                                        Las contraseñas no coinciden
+                                                    </small>
+                                        </div>
+                                    </div>
+                                    <nb-alert status="danger" *ngIf="mostrarAlerta && inicioSesionForm.pristine" class="text-center mt-5 animated bounce faster">
+                                        {{respuesta.mensaje}}
+                                    </nb-alert>
+                                    <div class="row">
+                                        <button type="submit" nbButton shape="round" class="btn btn-block mt-4" [disabled]="cambioContrasenaForm.invalid">
+                                                    Cambiar contraseña
+                                                </button>
+                                        <button type="button" nbButton shape="round" outline class="btn btn-default btn-block mt-3 mb-4" (click)="btnRetornar()">
+                                                    Retornar
+                                                </button>
+                                    </div>
+                                </form>
+                            </ng-template>
+
+
+                        </nb-card-body>
+                    </nb-card>
+                </div>
+            </div>
+        </div>
+    </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,38 @@
+nb-checkbox {
+    margin-bottom: 1rem;
+}
+
+.form-inline [fullWidth] {
+    flex: 1;
+}
+
+.form-inline>* {
+    margin: 0 1.5rem 1.5rem 0;
+}
+
+nb-card.inline-form-card nb-card-body {
+    padding-bottom: 0;
+}
+
+.contenido-login {
+    width: 500px;
+}
+
+nb-card {
+    -webkit-box-shadow: 0px 2px 26px -1px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 2px 26px -1px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 2px 26px -1px rgba(0, 0, 0, 0.57);
+}
+
+.logo-login {
+    background-color: white
+}
+
+nb-card {
+    border-radius: 1rem;
+}
+
+nb-card-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
