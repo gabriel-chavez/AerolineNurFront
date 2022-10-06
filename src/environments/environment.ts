@@ -10,4 +10,17 @@
 
 export const environment = {
   production: false,
+  
+  //  MS - CHECK IN
+  // apiHostCheckIn: "http://159.223.144.204",
+  // apiPortCheckIn:  "8090",
+  apiHostCheckIn: "https://localhost",
+  apiPortCheckIn:  "5001",
+  apiResourceGetAllReserva:  "/api/Reserva",
+  apiResourceGetAllCheckIn:  "/api/CheckIn",
+  // apiResourceCrearDeuda:  "/deuda/crear",
+  // apiResourceCrearPago:  "/deuda/realizarpago",
+
+  //apiHostDeuda: window["env"]["apiHostDeuda"] || "http://localhost",
+  //apiPortDeuda: window["env"]["apiPortDeuda"] || "8080",
 };

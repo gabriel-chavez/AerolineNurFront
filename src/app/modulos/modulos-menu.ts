@@ -47,6 +47,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
       }     
     ],
   },
+  {
+    title: 'Check In',
+    icon: 'list',
+    children: [
+      {
+        title: 'Listado Reserva',
+        link: '/modulos/checkin/reserva',
+      },
+      {
+        title: 'Listado Check In',
+        link: '/modulos/checkin/checkin',
+      },
+    ],
+  },
   
   
 ];
