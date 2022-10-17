@@ -10,4 +10,5 @@
 
 export const environment = {
   production: false,
+  servicioAutenticacionUrl: "http://34.152.30.178:8184/api/security/",
 };

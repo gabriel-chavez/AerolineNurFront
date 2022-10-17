@@ -6,6 +6,8 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject, pipe } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Usuario } from '../../../servicios/autenticacion/usuario.model';
+import { AutenticacionService } from '../../../servicios/autenticacion/autenticacion.service';
 // import { Usuario } from '../../../modelos/genericos/usuario.model';
 // import { AutenticacionService } from '../../../servicios/Autenticacion/autenticacion.service';
 
@@ -18,11 +20,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
- // datosUsuario: Usuario;
+  datosUsuario: Usuario;
   tituloModal: string = "";
   currentTheme = 'default';
 
-  userMenu = [{ title: 'Cambiar contraseña' }, { title: 'Cerrar sesion' }];
+  userMenu = [
+    { title: 'Cerrar sesion' },
+    // { title: 'Cambiar contraseña' }
+  ];
 
   constructor(private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
@@ -30,16 +35,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private layoutService: LayoutService,
     private breakpointService: NbMediaBreakpointsService,
     private dialogService: NbDialogService,
-    //private AutService: AutenticacionService,
-    private router: Router,       
+    private AutService: AutenticacionService,
+    private router: Router,
   ) {
   }
 
 
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;  
-    //this.datosUsuario=this.AutService.usuarioAutenticado;
+    this.currentTheme = this.themeService.currentTheme;
+    this.datosUsuario = this.AutService.usuarioAutenticado;
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -66,8 +71,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.cerrarSesion()
     }
     if (title === 'Cambiar contraseña') {
-      let rutaActual=encodeURI(this.router.url);     
-      this.router.navigate(['/autenticacion/cambiar-contrasena'], { queryParams: {ruta: rutaActual}});
+      let rutaActual = encodeURI(this.router.url);
+      this.router.navigate(['/autenticacion/cambiar-contrasena'], { queryParams: { ruta: rutaActual } });
     }
   }
 
@@ -111,6 +116,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       { context: contenido, closeOnEsc: true, closeOnBackdropClick: false, });
   }
   cerrarSesion() {
-  //  this.AutService.cerrarSesion();
+    this.AutService.cerrarSesion();
   }
 }
