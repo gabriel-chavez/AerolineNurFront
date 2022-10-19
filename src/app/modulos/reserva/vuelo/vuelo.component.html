@@ -1,0 +1,44 @@
+<router-outlet></router-outlet>
+
+<h2>Buscar Vuelos disponibles</h2>
+
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <nb-card>
+        <nb-card-body class="example-items-rows">
+          <input id="origen" formControlName="origen" type="text" nbInput placeholder="Origen">
+          <input id="destino" formControlName="destino" type="text" nbInput placeholder="Destino">
+        </nb-card-body>
+      </nb-card>
+
+    </div>
+
+
+    <button nbButton status="primary" class="button" type="submit" id="botonBuscarVuelo">Buscar</button>
+
+</form>
+
+<label *ngIf="vueloSeleccionado.vueloId" >Vuelo seleccionado: {{vueloSeleccionado.vueloId}} con origen de {{vueloSeleccionado.origen}} y destino a {{vueloSeleccionado.destino}}</label>
+
+
+<table border="2" id="tablaVuelos">
+    <thead>
+        <tr>
+            <th>vueloid</th>
+            <th>nrovuelo</th>
+            <th>destino</th>
+            <th>cantidadasientodisponible</th>
+            <th>accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyVuelos">
+        <tr *ngFor="let vuelo of vuelos | async ">
+            <td id="tablavueloid">{{vuelo.vueloId}}</td>
+            <td>{{vuelo.nroVuelo}}</td>
+            <td>{{vuelo.destino}}</td>
+            <td id="tablaasientos">{{vuelo.cantidadAsientoDisponible}}</td>
+            <td><button nbButton status="primary" id="tablabotonseleccionar" (click)="onSeleccionar(vuelo)">Seleccionar</button></td>
+        </tr>
+    </tbody>
+</table>

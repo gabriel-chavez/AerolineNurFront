@@ -1,0 +1,109 @@
+<router-outlet></router-outlet>
+
+<h2>Seleccionar Deuda</h2>
+<div>
+    <button nbButton status="primary" id="habilitarcreardeuda" (click)="habilitarCrearDeuda()">Crear Deuda</button>
+</div>
+
+<div *ngIf="crearDeuda">
+    <h3>Formulario para creacion de deuda</h3>
+
+    <form [formGroup]="inputFormCrear" (ngSubmit)="onCrearDeuda()">
+
+      <div>
+        <nb-card>
+          <div>
+          <nb-card-body class="example-items-rows">
+            <input id="inputCrearReservaId" formControlName="inputCrearReservaId" type="text" nbInput placeholder="Identificador de reserva">
+            <input id="inputCrearTotal" formControlName="inputCrearTotal" type="text" nbInput placeholder="Total">
+          </nb-card-body>
+        </div>
+        </nb-card>
+      </div>
+      <button nbButton status="primary" id="botoncreardeuda" class="button" type="submit">Crear</button>
+
+    </form>
+
+</div>
+
+
+<form [formGroup]="inputFormBuscar" (ngSubmit)="onBuscarDeuda()">
+
+  <div>
+    <nb-card>
+      <div>
+      <nb-card-body class="example-items-rows">
+        <input id="inputReservaId" formControlName="inputReservaId" type="text" nbInput placeholder="Identificador de reserva:">
+      </nb-card-body>
+    </div>
+    </nb-card>
+  </div>
+  <button nbButton status="primary" id="botonbuscardeuda" class="button" type="submit">Buscar</button>
+
+</form>
+
+<label *ngIf="mostrarDeudaSeleccionada">Deuda seleccionada: {{deudaEncontrada.deudaId}} </label>
+
+<div *ngIf="crearPago">
+    <h3>Formulario para realizar pago</h3>
+
+    <form [formGroup]="inputFormRealizarPago" (ngSubmit)="onPagar()">
+      <div>
+        <nb-card>
+          <div>
+          <nb-card-body class="example-items-rows">
+            <input id="inputMontoPagado" formControlName="inputMontoPagado" type="text" nbInput placeholder="Monto a pagar">
+            <input id="inputDetalle" formControlName="inputDetalle" type="text" nbInput placeholder="Detalle del pago">
+          </nb-card-body>
+        </div>
+        </nb-card>
+      </div>
+      <button nbButton status="primary" id="botonrealizarpago" class="button" type="submit">Pagar</button>
+
+    </form>
+
+</div>
+
+<table  border="2">
+    <thead>
+        <tr>
+            <th >deudaId</th>
+            <th >reservaId</th>
+            <th >estado</th>
+            <th >total</th>
+            <th >accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyDeudas">
+        <tr *ngIf="deudaEncontrada.deudaId">
+            <td >{{deudaEncontrada.deudaId}}</td>
+            <td >{{deudaEncontrada.reservaId}}</td>
+            <td  id="columnaestado">{{deudaEncontrada.estado}}</td>
+            <td  >{{deudaEncontrada.total}}</td>
+            <td>
+                <button nbButton status="primary" id="tablabotonseleccionar" (click)="cargarPagos()">ver pagos</button>
+                <button nbButton status="primary" id="tablabotonrealizarpago" (click)="onRealizarPago()">Realizar Pago</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<table   border="2" *ngIf="mostrarPagos">
+    <thead>
+        <tr>
+            <th>pagoId</th>
+            <th>detalle</th>
+            <th>deudaId</th>
+            <th>montoPagado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pago of deudaEncontrada.listaPagos">
+            <td>{{pago.pagoId}}</td>
+            <td>{{pago.detalle}}</td>
+            <td>{{pago.deudaId}}</td>
+            <td>{{pago.montoPagado}}</td>
+        </tr>
+    </tbody>
+</table>

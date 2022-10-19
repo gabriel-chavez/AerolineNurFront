@@ -1,0 +1,88 @@
+<router-outlet></router-outlet>
+
+<h2>Seleccionar pasajero</h2>
+<div>
+    <button nbButton status="primary" id="habilitarcrearpasajero" (click)="habilitarCrearPasajero()">CrearPasajero</button>
+</div>
+
+<div *ngIf="crearPasajero">
+    <h3>Formulario para creacion de pasajero</h3>
+
+    <form [formGroup]="inputFormCrear" (ngSubmit)="onCrearPasajero()">
+
+        <div>
+          <nb-card>
+            <div>
+            <nb-card-body class="example-items-rows">
+              <input id="inputCrearNroDoc" formControlName="inputCrearNroDoc" type="text" nbInput placeholder="Numero de documento">
+              <nb-select id="inputcreartipodocvalue" formControlName="inputCrearTipoDoc" placeholder="tipo de documento" [(selected)]="selectedItemCrear">
+                <nb-option value="1">Carnet de identidad</nb-option>
+                <nb-option value="2">Pasaporte</nb-option>
+              </nb-select>
+              <input id="inputCrearNombre" formControlName="inputCrearNombre" type="text" nbInput placeholder="Nombre">
+              <input id="inputCrearPrimerApellido" formControlName="inputCrearPrimerApellido" type="text" nbInput placeholder="Primer Apellido">
+              <input id="inputCrearSegundoApellido" formControlName="inputCrearSegundoApellido" type="text" nbInput placeholder="Segundo Apellido">
+            </nb-card-body>
+          </div>
+          </nb-card>
+        </div>
+
+        <button nbButton status="primary"  id="botoncrear" class="button" type="submit">Crear</button>
+
+    </form>
+
+</div>
+
+
+<form [formGroup]="inputForm" (ngSubmit)="onBuscarPasajero()">
+
+    <div>
+      <nb-card>
+        <div>
+        <nb-card-body class="example-items-rows">
+          <input id="inputNroDoc" formControlName="inputNroDoc" type="text" nbInput placeholder="Numero de documento">
+          <nb-select id="inputbuscartipodoc" formControlName="inputTipoDoc" placeholder="tipo de documento" [(selected)]="selectedItemBuscar">
+            <nb-option value="1">Carnet de identidad</nb-option>
+            <nb-option value="2">Pasaporte</nb-option>
+          </nb-select>
+        </nb-card-body>
+      </div>
+      </nb-card>
+    </div>
+
+
+
+    <button nbButton status="primary" id="botonbuscarpasajero" class="button" type="submit">Buscar</button>
+
+</form>
+
+
+
+
+<label *ngIf="mostrarPasajeroSeleccionado" >Pasajero seleccionado: {{pasajeroEncontrado.nombre}} </label>
+
+
+<table border="2">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>primerApellido</th>
+            <th>segundoApellido</th>
+            <th>nroDoc</th>
+            <th>tipoDoc</th>
+            <th>accion</th>
+        </tr>
+    </thead>
+    <tbody id="tbodypasajero">
+        <tr *ngIf="pasajeroEncontrado.pasajeroId">
+            <td>{{pasajeroEncontrado.nombre}}</td>
+            <td>{{pasajeroEncontrado.primerApellido}}</td>
+            <td>{{pasajeroEncontrado.segundoApellido}}</td>
+            <td>{{pasajeroEncontrado.nroDoc}}</td>
+            <td>{{pasajeroEncontrado.tipoDoc}}</td>
+            <td><button nbButton status="primary" id="tablabotonseleccionarpasajero" (click)="onSeleccionar()">Seleccionar</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<label *ngIf="vuelo.vueloId" >Vuelo seleccionado: {{vuelo.vueloId}} con destino a {{vuelo.destino}}</label>
