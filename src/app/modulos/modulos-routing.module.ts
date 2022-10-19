@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListadoComponent } from './areonave/listado/listado.component';
 import { RegistroComponent } from './areonave/registro/registro.component';
 import { ReservaComponent } from './checkin/reserva/reserva.component';
+import { ReservaLibreComponent } from './checkin/reservalibre/reservalibre.component';
 import { CheckInComponent } from './checkin/checkin/checkin.component';
 import { DefaultComponent } from './default/default.component';
 import { ModulosComponent } from './modulos.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
+import { CreateCheckInComponent } from './checkin/checkin/createcheckin.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'aeronave',
-        children :[
+        children: [
           {
             path: 'registro',
             component: RegistroComponent
@@ -33,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: 'vuelos',
-        children :[
+        children: [
           {
             path: 'registro',
             component: VuelosRegistroComponent
@@ -46,10 +48,18 @@ const routes: Routes = [
       },
       {
         path: 'checkin',
-        children :[
+        children: [
           {
             path: 'reserva',
             component: ReservaComponent
+          },
+          {
+            path: 'reservalibre',
+            component: ReservaLibreComponent
+          },
+          {
+            path: 'createcheckin',
+            component: CreateCheckInComponent
           },
           {
             path: 'checkin',

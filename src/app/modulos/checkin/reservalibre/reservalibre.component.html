@@ -1,6 +1,6 @@
 <!-- <router-outlet></router-outlet> -->
 
-<h2>Listado Reservas </h2>
+<h2>Listado Reservas Sin Check In </h2>
 
 <!-- <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
@@ -37,7 +37,8 @@
       <td>{{item.nroReserva}}</td>
       <td>{{item.hora | date:'short'}}</td>
       <td>{{item.vueloId}}</td>
-      <td class="text-center"><button nbButton status="primary" id="tablabotonseleccionar" (click)="onSeleccionar(item)">Seleccionar</button></td>
+      <td class="text-center"><button nbButton status="primary" id="tablabotonseleccionar"
+          (click)="onSeleccionar(item)">Seleccionar</button></td>
     </tr>
   </tbody>
 </table>

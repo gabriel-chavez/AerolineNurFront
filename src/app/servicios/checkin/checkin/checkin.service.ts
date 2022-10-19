@@ -13,6 +13,7 @@ import { environment } from '../../../../environments/environment';
 export class CheckInService {
 
   checkin: CheckIn;
+  satisfactorio: boolean;
 
   constructor(
     private http: HttpClient
@@ -49,4 +50,26 @@ export class CheckInService {
     this.checkin = new CheckIn();
   }
 
+
+  createNew(new_Obj: CheckIn) {
+    debugger;
+    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceCreateCheckIn;
+    console.log(new_Obj);
+    let response = this.http.post<CheckIn>(
+      url,
+      new_Obj
+    ).subscribe(
+      data => {
+        console.log("Obj creado correctamente con el ID: " + data);
+        alert("Obj creado correctamente con el ID: " + data);
+        this.satisfactorio = true;
+      },
+      error => {
+        alert("Error al crear el objeto.");
+        console.log(error);
+        this.satisfactorio = false;
+      }
+    );
+    return cloneDeep(response);
+  }
 }

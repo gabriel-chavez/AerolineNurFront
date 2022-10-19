@@ -46,6 +46,14 @@ export class ReservaService {
     return cloneDeep(response);
   }
 
+  GetReservasSinCheckIn() {
+    // const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetReservasSinCheckIn;
+    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceGetReservaLibre;
+    let response = this.http.get<Reserva[]>(url);
+    console.log(response);
+    return cloneDeep(response);
+  }
+
   clear() {
     this.reserva = new Reserva();
   }

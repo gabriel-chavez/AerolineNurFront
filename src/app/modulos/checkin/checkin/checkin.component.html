@@ -2,24 +2,7 @@
 
 <h2>Listado Check In </h2>
 
-<!-- <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
-
-  <div>
-    <nb-card>
-      <nb-card-body class="example-items-rows">
-        <input id="origen" formControlName="origen" type="text" nbInput placeholder="Origen">
-        <input id="destino" formControlName="destino" type="text" nbInput placeholder="Destino">
-      </nb-card-body>
-    </nb-card>
-
-  </div>
-
-  <button nbButton status="primary" class="button" type="submit" id="botonBuscar">Buscar</button>
-
-</form> -->
-
 <label *ngIf="checkinSeleccionado.id">Reserva seleccionado: {{reservaSeleccionado.id}} </label>
-
 
 <table id="miTabla" class="table table-striped table-sm">
   <thead>
@@ -28,16 +11,18 @@
       <th>nroCheckIn</th>
       <th>hora</th>
       <th>esAltaPrioridad</th>
-      <th></th>
+      <th>Cant. Equipaje</th>
+      <th>reserva</th>
     </tr>
   </thead>
   <tbody id="tbodyDatos">
     <tr *ngFor="let item of checkins | async ">
       <td>{{item.id}}</td>
       <td>{{item.nroCheckIn}}</td>
-      <td>{{item.hora}}</td>
+      <td>{{item.hora | date:'short'}}</td>
       <td>{{item.esAltaPrioridad}}</td>
-      <td class="text-center"><button nbButton status="primary" id="tablabotonseleccionar" (click)="onSeleccionar(item)">Seleccionar</button></td>
+      <td>{{item.detalleEquipaje.length}}</td>
+      <td>{{item.reservaId}}</td>
     </tr>
   </tbody>
 </table>

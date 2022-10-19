@@ -18,8 +18,15 @@ export const environment = {
   apiPortCheckIn:  "5001",
   apiResourceGetAllReserva:  "/api/Reserva",
   apiResourceGetAllCheckIn:  "/api/CheckIn",
+  apiResourceCreateCheckIn:  "/api/CheckIn",
   // apiResourceCrearDeuda:  "/deuda/crear",
   // apiResourceCrearPago:  "/deuda/realizarpago",
+
+
+  apiHostGateway: "https://localhost",
+  apiPortGateway:  "7212",
+  // apiResourceGetReservasSinCheckIn:  "/api/mscheckin/GetReservasSinCheckIn",
+  apiResourceGetReservaLibre:  "/api/ReservaLibre",
 
   //apiHostDeuda: window["env"]["apiHostDeuda"] || "http://localhost",
   //apiPortDeuda: window["env"]["apiPortDeuda"] || "8080",
