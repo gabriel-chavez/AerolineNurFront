@@ -12,22 +12,26 @@ export const environment = {
   production: false,
   
   //  MS - CHECK IN
-  // apiHostCheckIn: "http://159.223.144.204",
-  // apiPortCheckIn:  "8090",
-  apiHostCheckIn: "https://localhost",
-  apiPortCheckIn:  "5001",
-  apiResourceGetAllReserva:  "/api/Reserva",
-  apiResourceGetAllCheckIn:  "/api/CheckIn",
-  apiResourceCreateCheckIn:  "/api/CheckIn",
-  // apiResourceCrearDeuda:  "/deuda/crear",
-  // apiResourceCrearPago:  "/deuda/realizarpago",
+  apiHostMsCheckIn: "http://159.223.144.204",
+  apiPortMsCheckIn:  "8090",
+  // LOCAL
+  apiHostLocal: "https://localhost",
+  apiPortLocal:  "5001",
+  // GATEWAY
+  apiHostGateway: "http://34.152.30.178",
+  apiPortGateway:  "8184",
+  // GATEWAY LOCAL
+  apiHostGatewayLocal: "https://localhost",
+  apiPortGatewayLocal:  "7212",
+  // apiResourceGetAllReserva:  "/api/Reserva",
+  apiResourceGetAllReserva:  "/api/mscheckin/reserva",
+  // apiResourceGetAllCheckIn:  "/api/CheckIn",
+  apiResourceGetAllCheckIn:  "/api/mscheckin/checkin",
+  // apiResourceCreateCheckIn:  "/api/CheckIn",
+  apiResourceCreateCheckIn:  "/api/mscheckin/checkin",
+  apiResourceGetReservasSinCheckIn:  "/api/mscheckin/GetReservasSinCheckIn",
+  // apiResourceGetReservaLibre:  "/api/ReservaLibre",
+  apiResourceGetCheckInById:  "/api/CheckIn",
+  // apiResourceGetCheckInById:  "/api/mscheckin/checkin",
 
-
-  apiHostGateway: "https://localhost",
-  apiPortGateway:  "7212",
-  // apiResourceGetReservasSinCheckIn:  "/api/mscheckin/GetReservasSinCheckIn",
-  apiResourceGetReservaLibre:  "/api/ReservaLibre",
-
-  //apiHostDeuda: window["env"]["apiHostDeuda"] || "http://localhost",
-  //apiPortDeuda: window["env"]["apiPortDeuda"] || "8080",
 };

@@ -40,17 +40,15 @@ export class ReservaService {
   }
 
   getAllReserva() {
-    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceGetAllReserva;
+    const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetAllReserva;
     let response = this.http.get<Reserva[]>(url);
-    console.log(response);
     return cloneDeep(response);
   }
 
   GetReservasSinCheckIn() {
     // const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetReservasSinCheckIn;
-    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceGetReservaLibre;
+    const url = environment.apiHostGatewayLocal + ':' + environment.apiPortGatewayLocal + environment.apiResourceGetReservasSinCheckIn;
     let response = this.http.get<Reserva[]>(url);
-    console.log(response);
     return cloneDeep(response);
   }
 

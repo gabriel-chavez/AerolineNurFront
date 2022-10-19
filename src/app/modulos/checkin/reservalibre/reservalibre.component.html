@@ -18,7 +18,7 @@
 
 </form> -->
 
-<label *ngIf="reservaSeleccionado.id">Reserva seleccionado: {{reservaSeleccionado.id}} </label>
+<label *ngIf="reservaSeleccionado.id">Reserva seleccionado: {{reservaSeleccionado.Id}} </label>
 
 
 <table id="miTabla" class="table table-striped table-sm">
@@ -33,10 +33,10 @@
   </thead>
   <tbody id="tbodyDatos">
     <tr *ngFor="let item of reservas | async ">
-      <td>{{item.id}}</td>
-      <td>{{item.nroReserva}}</td>
-      <td>{{item.hora | date:'short'}}</td>
-      <td>{{item.vueloId}}</td>
+      <td>{{item.Id}}</td>
+      <td>{{item.NroReserva}}</td>
+      <td>{{item.Hora | date:'short'}}</td>
+      <td>{{item.VueloId}}</td>
       <td class="text-center"><button nbButton status="primary" id="tablabotonseleccionar"
           (click)="onSeleccionar(item)">Seleccionar</button></td>
     </tr>

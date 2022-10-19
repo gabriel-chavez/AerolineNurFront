@@ -40,7 +40,7 @@ export class CheckInService {
   }
 
   getAllCheckIn() {
-    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceGetAllCheckIn;
+    const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetAllCheckIn;
     let response = this.http.get<CheckIn[]>(url);
     console.log(response);
     return cloneDeep(response);
@@ -53,7 +53,7 @@ export class CheckInService {
 
   createNew(new_Obj: CheckIn) {
     debugger;
-    const url = environment.apiHostCheckIn + ':' + environment.apiPortCheckIn + environment.apiResourceCreateCheckIn;
+    const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceCreateCheckIn;
     console.log(new_Obj);
     let response = this.http.post<CheckIn>(
       url,
