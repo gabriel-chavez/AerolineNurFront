@@ -1,1 +1,11 @@
-<p>vuelos-listado works!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>Listado de vuelos</nb-card-header>
+            <nb-card-body>
+                <ngx-datatable [columnas]="columnas" [datos]="source" [opciones]="opciones"></ngx-datatable>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

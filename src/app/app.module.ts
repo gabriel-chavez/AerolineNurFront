@@ -22,6 +22,7 @@
    NbToastrModule,
    NbWindowModule,
  } from '@nebular/theme';
+import { CommonModule } from '@angular/common';
  //import { JwtInterceptor } from './genericos/Interceptor/jwt.interceptor';
  //import { ErrorServidorInterceptor } from './genericos/Interceptor/error-servidor.interceptor';
  //import { GlobalErrorHandler } from './genericos/error/global-error-handler';
@@ -33,7 +34,7 @@
  
  @NgModule({
    declarations: [AppComponent],
-   imports: [
+   imports: [   
      BrowserModule,
      BrowserAnimationsModule,
      HttpClientModule,

@@ -65,7 +65,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.onItemSelection(event.item.title);
     })
   }
-
+  open(dialog: TemplateRef<any>) {
+    this.dialogService.open(dialog, { context: 'this is some additional data passed to dialog' });
+  }
   onItemSelection(title) {
     if (title === 'Cerrar sesion') {
       this.cerrarSesion()

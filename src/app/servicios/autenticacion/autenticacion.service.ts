@@ -20,7 +20,6 @@ export class AutenticacionService {
   constructor(private http: HttpClient, private router: Router) {
     this.apiUrl = environment.servicioAutenticacionUrl;
     this.obtenerUsuarioAutenticado();
-
   }
   obtenerUsuarioAutenticado() {
     if (this.estaConectado()) {
@@ -40,19 +39,7 @@ export class AutenticacionService {
         tap(resp => this.autenticarEjecutar(resp)),       
       );
   }
-  // autenticar(nombreUsuario: string, contrasena: string): Observable<ResultadoLogin> {
-  //   const credenciales = {
-  //     username: nombreUsuario,
-  //     password: contrasena
-  //   }
-  //   console.log("asd")
-  //   return this.http.post<any>(`${this.apiUrl}login`, credenciales);
-  //   // return this.http.post<any>(
-  //   //   `${this.apiUrl}login`, credenciales)
-  //   //   .pipe(
-  //   //     tap(resp => this.autenticarEjecutar(resp))
-  //   //   );
-  // }
+ 
   autenticarEjecutar(respuestaBase: ResultadoLogin) {
     console.log(respuestaBase.result.success)
     if (respuestaBase.result.success) {

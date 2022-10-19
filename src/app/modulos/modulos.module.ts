@@ -8,6 +8,9 @@ import { DefaultComponent } from './default/default.component';
 import { ListadoComponent } from './areonave/listado/listado.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
+import { ComponentesModule } from '../genericos/componentes/componentes.module';
+import { NebularModule } from '../nebular.module';
+import { CommonModule } from '@angular/common';
 //import { UvComponentsModule } from '../genericos/uv-componentes/uv-components.module';
 //import { VariosModule } from './varios/varios.module';
 
@@ -17,13 +20,13 @@ import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registr
 @NgModule({
 
   imports: [
+    CommonModule,
     ModulosRoutingModule,
     ThemeModule,
     NbMenuModule,
-   // VariosModule,
-   
-   
- //  UvComponentsModule
+    ComponentesModule,
+    NebularModule,
+    
   ],
   declarations: [
     ModulosComponent,
