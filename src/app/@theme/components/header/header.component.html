@@ -14,14 +14,15 @@
   </div>
 
 </div>
-
+<!-- <pre>Data Obtained is: {{ datosUsuario | json }}</pre> -->
 <div class="header-container">
   <nb-actions size="small">
       <nb-action class="control-item" icon="email-outline" (click)="abrirModal(dialog,'Contacto')"></nb-action>
       <nb-action class="control-item" icon="info-outline" (click)="abrirModal(dialog,'Acerca de')"></nb-action>
-      <nb-action class="user-action" *nbIsGranted="['view', 'user']">
+      <nb-action class="user-action" >
+        <!-- *nbIsGranted="['view', 'user']"> -->
 
-          <nb-user [nbContextMenu]="userMenu" [onlyPicture]="userPictureOnly" [name]="(datosUsuario?.empleadoNombreCompleto | primeraMayuscula)" picture="assets/images/nick.png">
+          <nb-user [nbContextMenu]="userMenu" [onlyPicture]="userPictureOnly" [name]="(datosUsuario?.FullName)" >
           </nb-user>
       </nb-action>
   </nb-actions>
