@@ -21,20 +21,24 @@ export const environment = {
   apiResourceCrearReserva: window["env"]["apiResourceCrearReserva"] || "/reserva/crear",
   */
 
-  apiHostReserva: "http://159.223.144.204",
-  apiPortReserva:  "8080",
-  apiResourceGetPasajero:  "/pasajero/buscarpasajero",
-  apiResourceGetVuelo:  "/vuelo/buscarvuelos",
-  apiResourceCrearPasajero:"/pasajero/crear",
-  apiResourceCrearReserva:  "/reserva/crear",
+  apiHostReserva: "http://34.152.30.178",
+  apiPortReserva:  "8184",
+  apiResourceGetPasajero:  "/api/pasajero/buscarpasajero",
 
-  apiHostDeuda: "http://159.223.144.204",
-  apiPortDeuda:  "8081",
-  apiResourceGetdeudaByReservaId:  "/deuda/buscardeudabyreservaid",
-  apiResourceCrearDeuda:  "/deuda/crear",
-  apiResourceCrearPago:  "/deuda/realizarpago",
+  apiResourceCrearPasajero:"/api/pasajero/crear",
+  apiResourceCrearReserva:  "/api/reserva/crear",
+
+  apiHostVuelo: "http://159.223.144.204",
+  apiPortVuelo:  "8080",
+  apiResourceGetVuelo:  "/vuelo/buscarvuelos",///no se encuentra
+
+  apiHostDeuda: "http://34.152.30.178",
+  apiPortDeuda:  "8184",
+  apiResourceGetdeudaByReservaId:  "/api/deuda/buscardeudabyreservaid",
+  apiResourceCrearDeuda:  "/api/deuda/crear",
+  apiResourceCrearPago:  "/api/deuda/realizarpago",
 
   //apiHostDeuda: window["env"]["apiHostDeuda"] || "http://localhost",
   //apiPortDeuda: window["env"]["apiPortDeuda"] || "8080",
-  
+
 };

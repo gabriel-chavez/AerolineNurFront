@@ -40,7 +40,7 @@ export class VueloService {
     }
 
     getVuelosByDestinoBackEnd(origenEsperado: string, destinoEsperado: string){
-      const url = environment.apiHostReserva+':'+environment.apiPortReserva+environment.apiResourceGetVuelo;
+      const url = environment.apiHostVuelo+':'+environment.apiPortVuelo+environment.apiResourceGetVuelo;
       let queryParams = new HttpParams().append("origen", origenEsperado).append("destino", destinoEsperado);
       let response = this.http.get<Vuelo[]>(
         url,

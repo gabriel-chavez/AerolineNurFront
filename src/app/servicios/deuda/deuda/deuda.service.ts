@@ -17,12 +17,14 @@ export class DeudaService {
    }
 
    getDeudaByReservaIdBackEnd(reservaId: string){
-    const url = environment.apiHostDeuda+':'+environment.apiPortDeuda+environment.apiResourceGetdeudaByReservaId;
-    let queryParams = new HttpParams().append("id", reservaId);
+    //const url = environment.apiHostDeuda+':'+environment.apiPortDeuda+environment.apiResourceGetdeudaByReservaId;
+    //let queryParams = new HttpParams().append("id", reservaId);
+
+    const url = environment.apiHostDeuda+':'+environment.apiPortDeuda+environment.apiResourceGetdeudaByReservaId+'/'+reservaId;
 
     return this.http.get<Deuda>(
       url,
-      {params:queryParams},
+      //{params:queryParams},
       //{headers: {'Access-Control-Allow-Origin':'*'}}
       )
       /*.subscribe(
