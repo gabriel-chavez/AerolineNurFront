@@ -25,6 +25,7 @@
 import { CommonModule } from '@angular/common';
 import { TokenInterceptor } from './genericos/interceptor/token.interceptor';
 import { ComponentesModule } from './genericos/componentes/componentes.module';
+import { GlobalErrorHandler } from './genericos/error/global-error-handler';
 
  //import { ErrorServidorInterceptor } from './genericos/Interceptor/error-servidor.interceptor';
  //import { GlobalErrorHandler } from './genericos/error/global-error-handler';
@@ -56,7 +57,7 @@ import { ComponentesModule } from './genericos/componentes/componentes.module';
      CoreModule.forRoot(),
    ],
    providers: [
-   //  { provide: ErrorHandler, useClass: GlobalErrorHandler },
+     { provide: ErrorHandler, useClass: GlobalErrorHandler },
      { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: PantallaCargandoInterceptor, multi: true },
  

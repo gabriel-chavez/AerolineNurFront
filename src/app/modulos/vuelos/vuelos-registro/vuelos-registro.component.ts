@@ -25,8 +25,8 @@ export class VuelosRegistroComponent {
       horaLlegada: ['', Validators.required],
     });
   }
-  registrarVuelo() {
-    
+  registrarVuelo() {    
+
     this.mostrarAlerta = false
     if (this.registroVueloForm.valid) {
 
