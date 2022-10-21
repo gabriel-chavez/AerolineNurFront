@@ -25,6 +25,11 @@ import { AeropuertoComponent } from './aeronave/aeropuerto/aeropuerto.component'
 import { ModeloAeronaveComponent } from './aeronave/modelo-aeronave/modelo-aeronave.component';
 import { AeronaveComponent } from './aeronave/aeronave/aeronave.component';
 
+// import { ReservaComponent } from './checkin/reserva/reserva.component';
+import { ReservaLibreComponent } from './checkin/reservalibre/reservalibre.component';
+import { CheckInComponent } from './checkin/checkin/checkin.component';
+import { CreateCheckInComponent } from './checkin/checkin/createcheckin.component';
+import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.component';
 
 
 
@@ -71,6 +76,11 @@ import { AeronaveComponent } from './aeronave/aeronave/aeronave.component';
     AeropuertoComponent,
     ModeloAeronaveComponent,
     AeronaveComponent,
+    
+    ReservaLibreComponent,
+    CheckInComponent,
+    CreateCheckInComponent,
+    SearchCheckInComponent,
   ],
 
 

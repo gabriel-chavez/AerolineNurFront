@@ -43,4 +43,19 @@ export const environment = {
   //apiHostDeuda: window["env"]["apiHostDeuda"] || "http://localhost",
   //apiPortDeuda: window["env"]["apiPortDeuda"] || "8080",
 
+
+  
+  //  MS - CHECK IN
+  apiHostMsCheckIn: "http://159.223.144.204",
+  apiPortMsCheckIn:  "8090",
+  // GATEWAY
+  apiHostGateway: "http://34.152.30.178",
+  apiPortGateway:  "8184",
+  
+  apiResourceGetAllReserva:  "/api/mscheckin/reserva",
+  apiResourceGetAllCheckIn:  "/api/mscheckin/checkin",
+  apiResourceCreateCheckIn:  "/api/mscheckin/checkin",
+  apiResourceGetReservasSinCheckIn:  "/api/mscheckin/GetReservasSinCheckIn",
+  apiResourceGetCheckInById:  "/api/mscheckin/checkin",
+
 };

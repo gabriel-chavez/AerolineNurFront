@@ -13,6 +13,13 @@ import { VueloComponent } from './reserva/vuelo/vuelo.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
 
+
+// import { ReservaComponent } from './checkin/reserva/reserva.component';
+import { ReservaLibreComponent } from './checkin/reservalibre/reservalibre.component';
+import { CheckInComponent } from './checkin/checkin/checkin.component';
+import { CreateCheckInComponent } from './checkin/checkin/createcheckin.component';
+import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -24,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: 'aeronave',
-        children :[
+        children: [
           {
             path: 'aeropuerto',
             component: AeropuertoComponent
@@ -37,12 +44,12 @@ const routes: Routes = [
             path: 'registrar',
             component: AeronaveComponent
           },
-         
+
         ]
-      },      
+      },
       {
         path: 'vuelos',
-        children :[
+        children: [
           {
             path: 'registro',
             component: VuelosRegistroComponent
@@ -55,7 +62,7 @@ const routes: Routes = [
       },
       {
         path: 'reserva',
-        children :[
+        children: [
           {
             path: 'vuelo',
             component: VueloComponent
@@ -72,11 +79,36 @@ const routes: Routes = [
       },
       {
         path: 'deuda',
-        children :[
+        children: [
           {
             path: 'deuda',
             component: DeudaComponent
           }
+        ]
+      },
+      {
+        path: 'checkin',
+        children: [
+          // {
+          //   path: 'reserva',
+          //   component: ReservaComponent
+          // },
+          {
+            path: 'reservalibre',
+            component: ReservaLibreComponent
+          },
+          {
+            path: 'createcheckin',
+            component: CreateCheckInComponent
+          },
+          {
+            path: 'checkin',
+            component: CheckInComponent
+          },
+          {
+            path: 'searchcheckin',
+            component: SearchCheckInComponent
+          },
         ]
       }
     ]

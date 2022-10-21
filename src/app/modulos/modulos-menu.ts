@@ -8,14 +8,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Aeronaves',
     icon: 'paper-plane',
-    children: [    
+    children: [
       {
         title: 'Aeronave',
         children: [
           {
             title: 'Registro',
             link: '/modulos/aeronave/registrar',
-          },          
+          },
         ],
       },
       {
@@ -24,7 +24,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
           {
             title: 'Aeropuertos',
             link: '/modulos/aeronave/aeropuerto',
-          },          
+          },
         ],
       },
       {
@@ -33,12 +33,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
           {
             title: 'Modelos',
             link: '/modulos/aeronave/modelo',
-          },          
+          },
         ],
       },
     ],
   },
- 
+
   {
     title: 'Vuelos',
     icon: 'people-outline',
@@ -79,6 +79,32 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'gestion de deuda',
         link: '/modulos/deuda/deuda',
       }
+    ],
+  },
+  {
+    title: 'Check In',
+    icon: 'list',
+    children: [
+      // {
+      //   title: 'Listado Reserva',
+      //   link: '/modulos/checkin/reserva',
+      // },
+      {
+        title: 'Listado Reserva Libres',
+        link: '/modulos/checkin/reservalibre',
+      },
+      {
+        title: 'Registrar Check In',
+        link: '/modulos/checkin/createcheckin',
+      },
+      {
+        title: 'Listado Check In',
+        link: '/modulos/checkin/checkin',
+      },
+      {
+        title: 'Buscar Check In',
+        link: '/modulos/checkin/searchcheckin',
+      },
     ],
   },
 

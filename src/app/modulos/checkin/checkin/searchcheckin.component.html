@@ -1,0 +1,82 @@
+<router-outlet></router-outlet>
+
+<div>
+  <h3>Buscar Check In</h3>
+
+  <form [formGroup]="inputFormBuscar" (ngSubmit)="searchObj()">
+
+    <div>
+      <nb-card>
+        <nb-card-body class="example-items-rows">
+
+          <div>
+            <table>
+              <tr>
+                <th>Buscar ID :</th>
+                <td><input id="idSearch_txt" class="form-control" formControlName="idSearch_txt" type="text" nbInput
+                    required></td>
+                <td><button nbButton status="primary" id="botonaddequipaje" class="button" type="button"
+                    (click)="searchObj()">Ir</button></td>
+              </tr>
+            </table>
+
+
+
+          </div>
+          <br>
+          <div>
+            <h5>Check In</h5>
+            <br>
+            <table id="miTabla" class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>nroCheckIn</th>
+                  <th>hora</th>
+                  <th>esAltaPrioridad</th>
+                  <th>Cant. Equipaje</th>
+                  <th>reserva</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyDatos">
+                <tr *ngFor="let item of checkins">
+                  <td>{{item.id}}</td>
+                  <td>{{item.nroCheckIn}}</td>
+                  <td>{{item.hora | date:'short'}}</td>
+                  <td>{{item.esAltaPrioridad}}</td>
+                  <td>{{item.detalleEquipaje.length}}</td>
+                  <td>{{item.reservaId}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h5>Equipaje</h5>
+            <br>
+            <table id="miTablaEquipaje" class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>descripcion</th>
+                  <th>peso</th>
+                  <th>esFragil</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyDatos">
+                <tr *ngFor="let e of equipajes">
+                  <td>{{e.id}}</td>
+                  <td>{{e.descripcion}}</td>
+                  <td>{{e.peso}}</td>
+                  <td>{{e.esFragil}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+  </form>
+
+</div>
