@@ -31,7 +31,7 @@ export const environment = {
   apiResourceCreateCheckIn:  "/api/mscheckin/checkin",
   apiResourceGetReservasSinCheckIn:  "/api/mscheckin/GetReservasSinCheckIn",
   // apiResourceGetReservaLibre:  "/api/ReservaLibre",
-  apiResourceGetCheckInById:  "/api/CheckIn",
-  // apiResourceGetCheckInById:  "/api/mscheckin/checkin",
+  // apiResourceGetCheckInById:  "/api/CheckIn",
+  apiResourceGetCheckInById:  "/api/mscheckin/checkin",
 
 };

@@ -47,7 +47,7 @@ export class ReservaService {
 
   GetReservasSinCheckIn() {
     // const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetReservasSinCheckIn;
-    const url = environment.apiHostGatewayLocal + ':' + environment.apiPortGatewayLocal + environment.apiResourceGetReservasSinCheckIn;
+    const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetReservasSinCheckIn;
     let response = this.http.get<Reserva[]>(url);
     return cloneDeep(response);
   }

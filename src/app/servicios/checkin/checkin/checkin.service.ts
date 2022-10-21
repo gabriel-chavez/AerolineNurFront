@@ -50,7 +50,6 @@ export class CheckInService {
     this.checkin = new CheckIn();
   }
 
-
   createNew(new_Obj: CheckIn) {
     debugger;
     const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceCreateCheckIn;
@@ -72,4 +71,28 @@ export class CheckInService {
     );
     return cloneDeep(response);
   }
+
+  getDeudaByReservaIdBackEnd(id: string) {
+    //const url = environment.apiHostDeuda+':'+environment.apiPortDeuda+environment.apiResourceGetdeudaByReservaId;
+    //let queryParams = new HttpParams().append("id", reservaId);
+
+    const url = environment.apiHostGateway + ':' + environment.apiPortGateway + environment.apiResourceGetCheckInById + '/' + id;
+
+    return this.http.get<CheckIn>(
+      url,
+      //{params:queryParams},
+      //{headers: {'Access-Control-Allow-Origin':'*'}}
+    )
+      /*.subscribe(
+        data => {
+          alert("Deuda encontrada:" + data.deudaId);
+        },
+        error => {
+          alert("Ocurrio un error al tratar de buscar la deuda");
+          console.log(error);
+        }
+      )*/
+      ;
+  }
+
 }

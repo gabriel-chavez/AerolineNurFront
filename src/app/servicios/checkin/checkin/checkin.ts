@@ -7,7 +7,7 @@ export interface ICheckIn {
   nroAsiento: number;
   reservaId: string;
   vueloId: string;
-  detalle: Equipaje[];
+  detalleEquipaje: Equipaje[];
 }
 
 export class CheckIn implements CheckIn {
@@ -19,7 +19,7 @@ export class CheckIn implements CheckIn {
   nroAsiento: number = 0;
   reservaId: string = "";
   vueloId: string = "";
-  detalle: Equipaje[] = [];
+  detalleEquipaje: Equipaje[] = [];
 
   addEquipaje(pDescripcion: string, pPeso: number, pEsFragil: number) {
     var newEuipaje = new Equipaje();
@@ -28,11 +28,11 @@ export class CheckIn implements CheckIn {
     newEuipaje.peso = pPeso;
     newEuipaje.esFragil = pEsFragil;
 
-    this.detalle.push(newEuipaje);
+    this.detalleEquipaje.push(newEuipaje);
   }
 
   resetEquipaje() {
-    this.detalle = [];
+    this.detalleEquipaje = [];
   }
 }
 

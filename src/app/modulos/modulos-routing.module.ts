@@ -10,6 +10,7 @@ import { ModulosComponent } from './modulos.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
 import { CreateCheckInComponent } from './checkin/checkin/createcheckin.component';
+import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
           {
             path: 'checkin',
             component: CheckInComponent
+          },
+          {
+            path: 'searchcheckin',
+            component: SearchCheckInComponent
           },
         ]
       }

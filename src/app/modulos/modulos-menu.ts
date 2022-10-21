@@ -67,6 +67,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Listado Check In',
         link: '/modulos/checkin/checkin',
       },
+      {
+        title: 'Buscar Check In',
+        link: '/modulos/checkin/searchcheckin',
+      },
     ],
   },
   

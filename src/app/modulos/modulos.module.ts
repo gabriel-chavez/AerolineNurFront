@@ -15,6 +15,7 @@ import { ReservaComponent } from './checkin/reserva/reserva.component';
 import { ReservaLibreComponent } from './checkin/reservalibre/reservalibre.component';
 import { CheckInComponent } from './checkin/checkin/checkin.component';
 import { CreateCheckInComponent } from './checkin/checkin/createcheckin.component';
+import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.component';
 
 
 
@@ -46,6 +47,7 @@ import { CreateCheckInComponent } from './checkin/checkin/createcheckin.componen
     ReservaLibreComponent,
     CheckInComponent,
     CreateCheckInComponent,
+    SearchCheckInComponent,
   ],
 
 
