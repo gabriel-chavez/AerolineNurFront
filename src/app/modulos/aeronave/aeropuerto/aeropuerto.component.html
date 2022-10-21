@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>Registro de aeropuertos</nb-card-header>
+            <nb-card-body>               
+                <form class="container" [formGroup]="registroAeropuertosForm" (ngSubmit)="registrarVuelo()" novalidate autocomplete="off">
+                    <div class="form-group row">
+                        <label for="inputNombre" class="label col-sm-2 col-form-label">Nombre:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputNombre" placeholder="Nombre"
+                            formControlName="nombre">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPais" class="label col-sm-2 col-form-label">País:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputPais" placeholder="País"
+                            formControlName="pais">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCiudad" class="label col-sm-2 col-form-label">Ciudad:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputDestino" placeholder="Ciudad"
+                            formControlName="ciudad">
+                        </div>
+                    </div>                   
+                    <nb-alert status="danger" *ngIf="mostrarAlerta && registroAeropuertosForm.pristine"
+                        class="text-center mt-5 animated bounce faster">
+                        {{respuesta.result.message}}
+                    </nb-alert>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" nbButton status="primary" [disabled]="registroAeropuertosForm.invalid">Registrar</button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+        <nb-card>
+            <nb-card-header>Listado de aeropuertos</nb-card-header>
+            <nb-card-body>
+                <ngx-datatable [columnas]="columnas" [datos]="source" [opciones]="opciones"></ngx-datatable>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

@@ -1,18 +1,20 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatatableComponent } from './datatable/datatable.component';
+import { NgModule } from '@angular/core';
+import { ButtonCustomComponent, DatatableComponent } from './datatable/datatable.component';
 import { NebularModule } from '../../nebular.module';
 
 
 
 @NgModule({
   declarations: [
-    DatatableComponent
+    DatatableComponent,
+    ButtonCustomComponent
   ],
   imports: [   
     CommonModule, 
     NebularModule
   ],
-  exports:[DatatableComponent]
+  exports:[DatatableComponent],
+  entryComponents: [ButtonCustomComponent]
 })
 export class ComponentesModule { }

@@ -18,9 +18,10 @@ import {
 } from '@nebular/theme';
 import { ThemeModule } from './@theme/theme.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { CommonModule } from '@angular/common';
 
 const NEBULAR_COMPONENTS = [
-  
+  CommonModule, 
   ThemeModule,
   NbActionsModule,
   NbButtonModule,

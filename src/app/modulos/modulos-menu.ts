@@ -8,45 +8,79 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Aeronaves',
     icon: 'paper-plane',
-    children: [  
+    children: [    
       {
-        title: 'Registro de aeronave',
-        link: '/modulos/aeronave/registro',        
-      }, 
-      {
-        title: 'Listado de aeronaves',
-        link: '/modulos/aeronave/listado',        
-      }, 
-      {
-        title: 'Ejemplo',
-       
+        title: 'Aeronave',
         children: [
           {
-            title: 'Nuevo',
-            link: '/modulos/ejemplo/nuevo',
-          },
-          {
-            title: 'Realizados',
-            link: '/modulos/ejemplo/realizados',
+            title: 'Registro',
+            link: '/modulos/aeronave/registrar',
           },          
         ],
-      },   
+      },
+      {
+        title: 'Aeropuerto',
+        children: [
+          {
+            title: 'Aeropuertos',
+            link: '/modulos/aeronave/aeropuerto',
+          },          
+        ],
+      },
+      {
+        title: 'Modelo aeronave',
+        children: [
+          {
+            title: 'Modelos',
+            link: '/modulos/aeronave/modelo',
+          },          
+        ],
+      },
     ],
   },
+ 
   {
     title: 'Vuelos',
     icon: 'people-outline',
-    children: [  
+    children: [
       {
         title: 'Registro de vuelo',
-        link: '/modulos/vuelos/registro',        
-      }, 
+        link: '/modulos/vuelos/registro',
+      },
       {
         title: 'Listado de vuelos',
-        link: '/modulos/vuelos/listado',        
-      }     
+        link: '/modulos/vuelos/listado',
+      }
     ],
   },
-  
-  
+  {
+    title: 'Reserva',
+    icon: 'people-outline',
+    children: [
+      {
+        title: 'Seleccion de vuelo',
+        link: '/modulos/reserva/vuelo',
+      },
+      {
+        title: 'gestion de pasajero',
+        link: '/modulos/reserva/pasajero',
+      },
+      {
+        title: 'Registro de reserva',
+        link: '/modulos/reserva/reserva',
+      },
+    ],
+  },
+  {
+    title: 'deuda',
+    icon: 'people-outline',
+    children: [
+      {
+        title: 'gestion de deuda',
+        link: '/modulos/deuda/deuda',
+      }
+    ],
+  },
+
+
 ];

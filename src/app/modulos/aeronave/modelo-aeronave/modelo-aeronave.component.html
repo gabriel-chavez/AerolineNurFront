@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>Registro de modelos de aeronave</nb-card-header>
+            <nb-card-body>               
+                <form class="container" [formGroup]="registroModelosForm" (ngSubmit)="registrarModelo()" novalidate autocomplete="off">
+                    <div class="form-group row">
+                        <label for="inputModelo" class="label col-sm-2 col-form-label">Modelo:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputModelo" placeholder="Modelo"
+                            formControlName="modelo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputMarca" class="label col-sm-2 col-form-label">Marca:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputMarca" placeholder="Marca"
+                            formControlName="marca">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCapacidadCarga" class="label col-sm-2 col-form-label">Capacidad de carga:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputCapacidadCarga" placeholder="Capacidad de carga"
+                            formControlName="capacidadCarga">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCapacidadCargaCombustible" class="label col-sm-2 col-form-label">Capacidad de carga combustible:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputCapacidadCargaCombustible" placeholder="Capacidad de carga combustible"
+                            formControlName="capacidadCargaCombustible">
+                        </div>
+                    </div>   
+                    <nb-alert status="danger" *ngIf="mostrarAlerta && registroModelosForm.pristine"
+                        class="text-center mt-5 animated bounce faster">
+                        {{respuesta.result.message}}
+                    </nb-alert>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" nbButton status="primary" [disabled]="registroModelosForm.invalid">Registrar</button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+        <nb-card>
+            <nb-card-header>Listado de modelos de aeronave</nb-card-header>
+            <nb-card-body>
+                <ngx-datatable [columnas]="columnas" [datos]="source" [opciones]="opciones"></ngx-datatable>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

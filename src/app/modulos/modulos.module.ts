@@ -1,18 +1,29 @@
+import { CommonModule } from '@angular/common';  
 import { NgModule } from '@angular/core';
 import { ModulosComponent } from './modulos.component';
 import { ModulosRoutingModule } from './modulos-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
-import { NbMenuModule } from '@nebular/theme';
-import { RegistroComponent } from './areonave/registro/registro.component';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbMenuModule, NbRadioModule, NbSelectModule, NbUserModule } from '@nebular/theme';
+
 import { DefaultComponent } from './default/default.component';
-import { ListadoComponent } from './areonave/listado/listado.component';
+
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
+import { ReservaComponent } from './reserva/reserva/reserva.component';
+import { PasajeroComponent } from './reserva/pasajero/pasajero.component';
+import { VueloComponent } from './reserva/vuelo/vuelo.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeudaComponent } from './deuda/deuda/deuda.component';
+
+
 import { ComponentesModule } from '../genericos/componentes/componentes.module';
-import { NebularModule } from '../nebular.module';
-import { CommonModule } from '@angular/common';
-//import { UvComponentsModule } from '../genericos/uv-componentes/uv-components.module';
-//import { VariosModule } from './varios/varios.module';
+import { FormsRoutingModule } from '../pages/forms/forms-routing.module';
+import { AeropuertoComponent } from './aeronave/aeropuerto/aeropuerto.component';
+import { ModeloAeronaveComponent } from './aeronave/modelo-aeronave/modelo-aeronave.component';
+import { AeronaveComponent } from './aeronave/aeronave/aeronave.component';
 
 
 
@@ -24,19 +35,42 @@ import { CommonModule } from '@angular/common';
     ModulosRoutingModule,
     ThemeModule,
     NbMenuModule,
+    NbCardModule,
+
+    MatInputModule,
+    NbSelectModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
     ComponentesModule,
-    NebularModule,
     
+    
+    NbInputModule,
+    NbButtonModule,
+    NbActionsModule,
+    NbUserModule,
+    NbCheckboxModule,
+    NbRadioModule,
+    NbDatepickerModule,
+    FormsRoutingModule,
+    NbIconModule,
+    FormsModule,
   ],
   declarations: [
     ModulosComponent,
-    RegistroComponent,
+
     DefaultComponent,
-    ListadoComponent,
+    
     VuelosListadoComponent,
     VuelosRegistroComponent,
-    
-  
+    ReservaComponent,
+    PasajeroComponent,
+    VueloComponent,
+    DeudaComponent,
+    AeropuertoComponent,
+    ModeloAeronaveComponent,
+    AeronaveComponent,
   ],
 
 

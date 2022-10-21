@@ -18,7 +18,7 @@ export class AutenticacionService {
   private helper = new JwtHelperService();
 
   constructor(private http: HttpClient, private router: Router) {
-    this.apiUrl = environment.servicioAutenticacionUrl;
+    this.apiUrl = environment.apiAutenticacion;
     this.obtenerUsuarioAutenticado();
   }
   obtenerUsuarioAutenticado() {
@@ -51,7 +51,7 @@ export class AutenticacionService {
   estaConectado() {
     return !!this.obtenerJwtToken();
   }
-  obtenerJwtToken() {
+  obtenerJwtToken() {    
     return localStorage.getItem(this.JWT_TOKEN);
   }
   cerrarSesion() {

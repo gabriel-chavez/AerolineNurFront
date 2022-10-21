@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>Registro de Aeronave</nb-card-header>
+            <nb-card-body>
+                <form class="container" [formGroup]="registroAeronaveForm" (ngSubmit)="registrarAeronave()" novalidate
+                    autocomplete="off">
+                    <div class="form-group row">
+                        <label for="inputMatricula" class="label col-sm-2 col-form-label">Matricula:</label>
+                        <div class="col-sm-10">
+                            <input type="text" nbInput fullWidth id="inputMatricula" placeholder="Matricula"
+                                formControlName="matricula">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputModelo" class="label col-sm-2 col-form-label">Modelo:</label>
+                        <div class="col-sm-10">
+                             <select id="inputModelo" formControlName="modeloAeronave" class="form-control">
+                                <option *ngFor="let modelo of parametrosModelosAeronave" [ngValue]="modelo">
+                                    {{ modelo.modelo }}
+                                </option>                                
+                            </select>                     
+                              <!-- <p>Form value: {{ registroAeronaveForm.value | json }}</p>                    -->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputAeropuerto" class="label col-sm-2 col-form-label">Aeropuerto:</label>
+                        <div class="col-sm-10">
+                            <select id="inputAeropuerto" formControlName="aeropuerto" class="form-control">
+                               <option *ngFor="let aeropuerto of parametrosAeropuerto" [ngValue]="aeropuerto">
+                                   {{ aeropuerto.nombre }}
+                               </option>                                
+                           </select>                                                            
+                       </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEstado" class="label col-sm-2 col-form-label">Estado:</label>
+                        <div class="col-sm-10">
+                            <select id="inputEstado" formControlName="estadoAeronave" class="form-control">
+                               <option *ngFor="let estado of parametrosEstadoAeropuerto" [ngValue]="estado">
+                                   {{ estado.descripcion }}
+                               </option>                                
+                           </select>                                                            
+                       </div>
+                    </div>
+                    <nb-alert status="danger" *ngIf="mostrarAlerta && registroAeronaveForm.pristine"
+                        class="text-center mt-5 animated bounce faster">
+                        {{respuesta.result.message}}
+                    </nb-alert>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" nbButton status="primary"
+                                [disabled]="registroAeronaveForm.invalid">Registrar</button>
+                        </div>
+                    </div>
+                </form>
+            </nb-card-body>
+        </nb-card>
+        <nb-card>
+            <nb-card-header>Listado de aeropuertos</nb-card-header>
+            <nb-card-body>
+                <ngx-datatable [columnas]="columnas" [datos]="source" [opciones]="opciones"></ngx-datatable>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

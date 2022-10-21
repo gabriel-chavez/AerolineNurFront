@@ -16,7 +16,7 @@ export class DatatableComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.columnas.button = this.buttonsCustom();
+    //this.columnas.button = this.buttonsCustom();
     this.ajustes = {
       actions: false,
       columns: this.columnas,

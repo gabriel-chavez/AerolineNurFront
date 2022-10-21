@@ -25,7 +25,9 @@ export class TokenInterceptor implements HttpInterceptor {
     }
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) {
+        if (error.status === 401) {          
+          this.autenticacionService.cerrarSesion();
+          this.alerta.error("No autorizado");
           return this.handle401Error(request, next);
         } else {
           return throwError(error);
@@ -35,7 +37,8 @@ export class TokenInterceptor implements HttpInterceptor {
   private addToken(request: HttpRequest<any>, token: string) {
     return request.clone({
       setHeaders: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
       }
     });
   }

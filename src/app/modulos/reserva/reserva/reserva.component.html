@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+<h2>Realizar reserva</h2>
+
+<div>
+    <h3>Formulario para creacion de reserva</h3>
+
+    <form [formGroup]="inputFormCrear" (ngSubmit)="onCrearReserva()">
+
+      <div>
+        <nb-card>
+          <nb-card-body class="example-items-rows">
+            <input id="inputCrearNroReserva" formControlName="inputCrearNroReserva" type="text" nbInput placeholder="Numero de reserva">
+            <input id="inputCrearPrecio" formControlName="inputCrearPrecio" type="text" nbInput placeholder="Precio">
+            <input id="inputCrearCantidadPasajero" formControlName="inputCrearCantidadPasajero" type="text" nbInput placeholder="Cantidad de pasajeros">
+          </nb-card-body>
+        </nb-card>
+      </div>
+
+        <div *ngIf="vuelo.vueloId">
+            <label>
+                Destino {{vuelo.destino}} con disponibilidad de {{vuelo.cantidadAsientoDisponible}}
+            </label>
+        </div>
+        <div *ngIf="pasajero.pasajeroId">
+            <label>
+                Pasajero {{pasajero.nombre}} {{pasajero.primerApellido}} con documento de identidad {{pasajero.nroDoc}}
+            </label>
+        </div>
+
+        <button nbButton status="primary" id="botoncrearreserva" class="button" type="submit">Crear</button>
+
+    </form>
+
+</div>
