@@ -9,6 +9,7 @@ import { DeudaComponent } from './deuda/deuda/deuda.component';
 import { ModulosComponent } from './modulos.component';
 import { PasajeroComponent } from './reserva/pasajero/pasajero.component';
 import { ReservaComponent } from './reserva/reserva/reserva.component';
+import { TripulacionComponent } from './tripulacion/tripulacion/tripulacion.component';
 import { VueloComponent } from './reserva/vuelo/vuelo.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
@@ -110,7 +111,16 @@ const routes: Routes = [
             component: SearchCheckInComponent
           },
         ]
-      }
+      },
+      {
+        path: 'tripulacion',
+        children: [
+          {
+            path: 'tripulacion',
+            component: TripulacionComponent
+          }
+        ]
+      },
     ]
   }
 ];

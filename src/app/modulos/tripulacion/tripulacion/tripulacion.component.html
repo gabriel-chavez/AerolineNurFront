@@ -1,0 +1,41 @@
+<router-outlet></router-outlet>
+
+<h2>Crear tripulacion</h2>
+
+<div *ngIf="crearTripulacion">
+    <h3>Formulario para creacion de tripulacion</h3>
+
+    <form [formGroup]="inputFormCrear" (ngSubmit)="onCrearTripulacion()">
+
+        <div>
+          <nb-card>
+            <div>
+            <nb-card-body class="example-items-rows">
+              <input id="inputCrearNroDoc" formControlName="inputCrearNroDoc" type="text" nbInput placeholder="Numero de documento">
+              <nb-select id="inputcreartipodocvalue" formControlName="inputCrearTipoDoc" placeholder="tipo de documento" [(selected)]="selectedItemCrear">
+                <nb-option value="1">Carnet de identidad</nb-option>
+                <nb-option value="2">Pasaporte</nb-option>
+              </nb-select>
+              <nb-select id="inputcreartipovalue" formControlName="inputCrearTipo" placeholder="tipo de tripulacion" [(selected)]="selectedItemCrearTipo">
+                <nb-option value="1">Personal de Vuelo</nb-option>
+                <nb-option value="2">Administrativo</nb-option>
+              </nb-select>
+              <input id="inputCrearNombre" formControlName="inputCrearNombre" type="text" nbInput placeholder="Nombre">
+              <input id="inputCrearApellido" formControlName="inputCrearApellido" type="text" nbInput placeholder="Apellido">
+
+            </nb-card-body>
+          </div>
+          </nb-card>
+        </div>
+
+        <button nbButton status="primary"  id="botoncrear" class="button" type="submit">Crear</button>
+
+    </form>
+
+</div>
+
+
+
+
+
+

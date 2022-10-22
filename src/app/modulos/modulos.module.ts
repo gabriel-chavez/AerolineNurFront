@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ModulosComponent } from './modulos.component';
 import { ModulosRoutingModule } from './modulos-routing.module';
@@ -10,6 +10,7 @@ import { DefaultComponent } from './default/default.component';
 import { VuelosListadoComponent } from './vuelos/vuelos-listado/vuelos-listado.component';
 import { VuelosRegistroComponent } from './vuelos/vuelos-registro/vuelos-registro.component';
 import { ReservaComponent } from './reserva/reserva/reserva.component';
+import { TripulacionComponent } from './tripulacion/tripulacion/tripulacion.component';
 import { PasajeroComponent } from './reserva/pasajero/pasajero.component';
 import { VueloComponent } from './reserva/vuelo/vuelo.component';
 import { MatInputModule } from '@angular/material/input';
@@ -49,8 +50,8 @@ import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.componen
     FormsModule,
     ReactiveFormsModule,
     ComponentesModule,
-    
-    
+
+
     NbInputModule,
     NbButtonModule,
     NbActionsModule,
@@ -66,7 +67,7 @@ import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.componen
     ModulosComponent,
 
     DefaultComponent,
-    
+
     VuelosListadoComponent,
     VuelosRegistroComponent,
     ReservaComponent,
@@ -76,7 +77,8 @@ import { SearchCheckInComponent } from './checkin/checkin/searchcheckin.componen
     AeropuertoComponent,
     ModeloAeronaveComponent,
     AeronaveComponent,
-    
+    TripulacionComponent,
+
     ReservaLibreComponent,
     CheckInComponent,
     CreateCheckInComponent,

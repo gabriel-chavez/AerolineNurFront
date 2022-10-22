@@ -107,6 +107,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-
+  {
+    title: 'Tripulacion',
+    icon: 'people-outline',
+    children: [
+      {
+        title: 'Creacion de tripulacion',
+        link: '/modulos/tripulacion/tripulacion',
+      },
+    ],
+  },
 
 ];
